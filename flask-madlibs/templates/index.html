@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+
+{% if story %}
+
+<p>{{story}}</p>
+
+{% endif %}
+
+
+{% if prompts %}
+
+    <form method="post">
+        {% for prompt in prompts %}
+            <div class="form-group">
+                <label>{{prompt}}</label>
+                <input type="text" name={{prompt}} required />
+            </div>
+
+
+        {% endfor %}
+        <button type="submit">Submit</button>
+
+    </form>
+
+{% endif %}
+
+{% for prompt in prompts %}
+{% endfor %}
+
+</body>
+</html>
